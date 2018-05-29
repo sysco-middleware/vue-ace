@@ -26,6 +26,10 @@ export default {
     cssClasses: {
       type: String,
       default: ''
+    },
+    content: {
+      type: String,
+      default: ''
     }
   },
   data () {
@@ -35,33 +39,43 @@ export default {
       editor: null
     }
   },
+  watch: {
+    content () {
+      if (!this.editor) {
+        return
+      }
+
+      this.setValue(this.content)
+    }
+  },
   methods: {
     setTheme (theme) {
-      if (!this.$data.editor) {
+      if (!this.editor) {
         return
       }
 
-      this.$data.theme = theme
-      this.$data.editor.setTheme(theme)
+      this.theme = theme
+      this.editor.setTheme(theme)
     },
     setMode (mode) {
-      if (!this.$data.editor) {
+      if (!this.editor) {
         return
       }
 
-      this.$data.mode = mode
-      this.$data.editor.session.setMode(mode)
+      this.mode = mode
+      this.editor.session.setMode(mode)
     },
     setValue (code) {
       if (!this.$data.editor) {
         return
       }
 
-      this.$data.editor.session.setValue(code)
+      this.editor.session.setValue(code)
     },
     createEditor (options) {
-      this.$data.editor = Ace.edit(this.editorId)
-      this.$data.editor.setOptions(options || {})
+      this.editor = Ace.edit(this.editorId)
+      this.editor.setOptions(options || {})
+      this.setValue(this.content)
 
       // TODO: listen to all events
     }

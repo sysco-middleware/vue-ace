@@ -1,6 +1,6 @@
 <template>
   <div>
-    <JSON />
+    <JSON :content="code" />
   </div>
 </template>
 
@@ -11,6 +11,30 @@ export default {
   name: 'app',
   components: {
     JSON
+  },
+  data () {
+    return {
+      code: `{
+  "type": "record",
+  "name": "events",
+  "namespace": "com.sysco",
+  "doc": "This is a sample Avro schema to get you started. Please edit",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "number1",
+      "type": "int"
+    },
+    {
+      "name": "number2",
+      "type": "float"
+    }
+  ]
+}`
+    }
   }
 }
 </script>
