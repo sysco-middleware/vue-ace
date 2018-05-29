@@ -4,7 +4,7 @@ vue-ace is a wrapper for [Ace](https://ace.c9.io/) in vue. You have to seperatel
 
 # Install
 
-- `npm i --save @sysco-middleware/vue-ace ace-builds`
+- `npm i --save @sysco-middleware/vue-ace brace`
 
 # Getting started
 
