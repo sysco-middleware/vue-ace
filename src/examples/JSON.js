@@ -1,5 +1,5 @@
 import Ace from '../'
-import 'ace-builds/src-min-noconflict/mode-json'
+import 'brace/mode/json'
 
 export default {
   extends: Ace,

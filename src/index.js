@@ -1,4 +1,4 @@
-import Ace from 'ace-builds/src-min-noconflict/ace'
+import Ace from 'brace'
 
 export default {
   render: function (createElement) {
