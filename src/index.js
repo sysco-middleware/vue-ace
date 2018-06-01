@@ -66,7 +66,7 @@ export default {
       this.editor.session.setMode(mode)
     },
     setValue (code) {
-      if (!this.$data.editor) {
+      if (!this.editor) {
         return
       }
 
@@ -81,8 +81,8 @@ export default {
     }
   },
   beforeDestroy () {
-    if (this.$data.editor) {
-      this.$data.editor.destroy()
+    if (this.editor) {
+      this.editor.destroy()
     }
   }
 }
